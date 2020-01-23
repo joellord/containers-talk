@@ -14,7 +14,7 @@
     },
     "bottom": {                 
       "left": ["twitter.presenter", "twitter.event"],
-      "center": "Red Hat Openshift"
+      "center": "Red Hat OpenShift"
     }
   },
   "slides": [
@@ -28,7 +28,7 @@
         "title": "Hi, I'm Joel",
         "list": [
           "Dev Advocate @ Red Hat OpenShift",
-          "Based in Toronto",
+          "Based in Ottawa",
           "💓  Twitter: @joel__lord",
           "I have stickers "
         ]
@@ -190,7 +190,7 @@
       "title": "Docker run",
       "subtitle": "Other useful flags",
       "list": [
-        "[cyan]-d[reset] runs docker in daemon mode (background)",
+        "[cyan]-d[reset] runs docker in detached mode (background)",
         "[cyan]--rm[reset] removes the container after it stopped",
         "[cyan]--name[reset] names your container"
       ]
