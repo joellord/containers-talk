@@ -1,0 +1,2 @@
+echo "docker run -d --rm --name mynginx -p 8888:80 -v $(pwd):/usr/share/nginx/html nginx:1.17-alpine"
+docker run -d --rm --name mynginx -p 8888:80 -v $(pwd)/samples/static:/usr/share/nginx/html nginx:1.17-alpine

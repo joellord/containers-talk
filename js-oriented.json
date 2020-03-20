@@ -1,5 +1,5 @@
 {
-  "title": "Containers for Developers",
+  "title": "Containers for JS Devs",
   "presenter": "Joel Lord",
   "date": "May 15, 2020",
   "conference": "JSKongress",
@@ -20,7 +20,7 @@
   "slides": [
     {
       "type": "title",
-      "title": "Containers for Developers"
+      "title": "Containers for JS Devs"
     },
     {
       "type": "split",
@@ -28,7 +28,7 @@
         "title": "Hi, I'm Joel",
         "list": [
           "Dev Advocate @ Red Hat OpenShift",
-          "Based in Ottawa",
+          "Based in Ottawa, Canada",
           "💓  Twitter: @joel__lord",
           "I have stickers "
         ]
@@ -209,32 +209,61 @@
       "text": "You can use a container to run code in a different environment."
     },
     {
+      "type": "speaking",
+      "character": "over-cubbie",
+      "text": "This is a JS conference, how about JS examples."
+    },
+    {
       "type": "code",
-      "title": "Docker run",
+      "title": "Docker Run",
       "multistep": true,
       "multistepType": "highlight",
-      "text": "Run a PHP command line script",
-      "code": "docker run -v $(pwd):/app [reverse]php:7.1[reset] [reverse]php /app/cli.php[reset]"
+      "text": "Nginx is a fast and easy to use open source web server",
+      "code": "docker run -d --rm --name mynginx -p 8080:80 [reverse]-v $(pwd):/usr/share/nginx/html[reset] [reverse]nginx:1.17-alpine[reset]"
+    },
+    {
+      "type": "terminal",
+      "title": "Docker Run",
+      "text": "Serve static files with nginx"
+    },
+    {
+      "type": "code",
+      "title": "Pro Tip (*nix)",
+      "text": "Create an alias to quickly start/stop nginx servers in your [reverse]~/.zshrc[reset] file",
+      "code": [
+        "alias start-nginx=\"docker run -d --rm --name static -p 8080:80 -v $(pwd):/usr/share/nginx/html nginx:1.17-alpine\"",
+        "alias stop-nginx=\"docker stop static\""
+      ]
     },
     {
       "type": "code",
       "title": "Docker run",
       "multistep": true,
       "multistepType": "highlight",
-      "text": "Run a PHP command line script",
-      "code": "docker run -v $(pwd):/app [reverse]-w /app[reset] php:7.1 [reverse]php cli.php[reset]",
+      "text": "Run a Node command line script",
+      "code": "docker run [reverse]-v $(pwd):/app[reverse] [reverse]node:10[reset] [reverse]node /app/cli.js[reset]"
+    },
+    {
+      "type": "code",
+      "title": "Docker run",
+      "multistep": true,
+      "multistepType": "highlight",
+      "text": "Run a Node command line script",
+      "code": "docker run -v $(pwd):/app [reverse]-w /app[reset] node:10 [reverse]node cli.js[reset]",
       "notes": "You can also use a working directory and run the script from there."
     },
     {
       "type": "terminal",
       "title": "Docker Run",
-      "text": "Run a PHP command line script"
+      "text": "Run a Node command line script"
     },
     {
       "type": "code",
       "title": "Docker run",
+      "multistep": true,
+      "multistepType": "highlight",
       "text": "Run a NodeJS/Express server",
-      "code": "docker run -v $(pwd):/app -p 8080:3000 [reverse]node:10[reset] node /app"
+      "code": "docker run [reverse]-d[reset] -v $(pwd):/app [reverse]-p 8080:3000[reset] node:10 [reverse]node /app[reset]"
     },
     {
       "type": "terminal",
@@ -272,7 +301,13 @@
       "type": "code",
       "title": "Environment variables",
       "text": "Use the -e flag to pass env variables to docker",
-      "code": "docker run [reverse]-e BASE_URL='http://localhost:8888'[reset] php:7.1-apache"
+      "code": "docker run [reverse]-e BASE_URL='http://localhost:8888'[reset] node:10"
+    },
+    {
+      "type": "code",
+      "title": "Environment variables",
+      "text": "Accessing environment variables in NodeJS",
+      "code": "[yellow]console[reset].[yellow]log[reset]([cyan]`Base URL is [blue]${[blue][bright]process.env.BASE_URL[reset][blue]}[cyan]`[reset]);"
     },
     {
       "type": "code",
@@ -285,15 +320,9 @@
       ]
     },
     {
-      "type": "code",
-      "title": "Environment variables",
-      "text": "Accessing environment variables in NodeJS",
-      "code": "[yellow]console[reset].[yellow]log[reset]([cyan]`Base URL is [blue]${[blue][bright]process.env.BASE_URL[reset][blue]}[cyan]`[reset]);"
-    },
-    {
       "type": "terminal",
       "title": "Environment variables",
-      "text": "Changing our ENV variables for our PHP script"
+      "text": "Changing our ENV variables for our NodeJS script"
     },
     {
       "type": "code",
@@ -344,18 +373,6 @@
         "Standardized set of commands",
         "Lets you build your own images for sharing",
         "Builds stacks that can be shared"
-      ]
-    },
-    {
-      "type": "code",
-      "title": "Dockerfile",
-      "multistep": true,
-      "multistepType": "line",
-      "text": "A Dockerfile for a PHP project",
-      "code": [
-        "[yellow]FROM[reset] php:7.1-apache",
-        "[yellow]EXPOSE[reset] 80",
-        "[yellow]COPY[reset] . /var/www/html"
       ]
     },
     {
@@ -449,7 +466,7 @@
       "type": "code",
       "title": "Sharing",
       "text": "To publish to a registry, use push",
-      "code": "docker push [reverse]docker.io/joellord/my-php[reset]",
+      "code": "docker push [reverse]quay.io/joellord/my-php[reset]",
       "notes": "In order to publish to a registry, you will have to sign in the latter using [cyan]docker login[reset]."
     },
     {
@@ -462,7 +479,7 @@
       "type": "code",
       "title": "Sharing",
       "text": "To download an image, use pull",
-      "code": "docker pull [reverse]docker.io/joellord/my-nodejs[reset]"
+      "code": "docker pull [reverse]quay.io/joellord/my-nodejs[reset]"
     },
     {
       "type": "titleOnly",
@@ -504,14 +521,14 @@
       "type": "code",
       "title": "Docker logs",
       "text": "You can see the latest logs in a given container",
-      "code": "docker logs [reverse]my-php[reset]",
+      "code": "docker logs [reverse]mynode[reset]",
       "notes": "It makes it easier when you have given a name to your container using the [cyan]--name[reset] flag."
     },
     {
       "type": "code",
       "title": "Docker logs",
       "text": "You can see the latest logs in a given container",
-      "code": "docker logs [reverse]-f[reset] my-php",
+      "code": "docker logs [reverse]-f[reset] mynode",
       "notes": "By using the [cyan]-f[reset] flag, you can look at the logs in real-time."
     },
     {
@@ -528,14 +545,14 @@
       "type": "code",
       "title": "Docker exec",
       "text": "Run a command inside your container",
-      "code": "docker exec my-php [reverse]/bin/ls /var/www/html[reset]",
+      "code": "docker exec mynode [reverse]/bin/ls /var/www/html[reset]",
       "notes": "This runs a command available inside your container. In this case, using /bin/ls will still work if the container runs in Windows"
     },
     {
       "type": "code",
       "title": "Docker exec",
       "text": "Log into your container with exec",
-      "code": "docker exec [reverse]-it[reset] my-php [reverse]/bin/bash[reset]",
+      "code": "docker exec [reverse]-it[reset] mynode [reverse]/bin/bash[reset]",
       "notes": "The -it specifies that this will be an interactive command (and won't work in the slides)."
     },
     {
@@ -549,7 +566,7 @@
       "type": "code",
       "title": "Docker cp",
       "text": "Copy files from the container to your machine",
-      "code": "docker cp [reverse]my-php:/etc/apache2/apache2.conf[reset] [reverse].[reset]",
+      "code": "docker cp [reverse]mynode:/app/package-lock.json[reset] [reverse].[reset]",
       "notes": "Useful when you need to access or verify the configuration files on your server."
     },
     {
@@ -574,7 +591,7 @@
     {
       "type": "simple",
       "title": "Running Multiple Containers",
-      "text": "If you have multiple containers (ie PHP + MySQL), you might want to look into [cyan]docker-compose[reset]."
+      "text": "If you have multiple containers (ie NodeJS + MySQL), you might want to look into [cyan]docker-compose[reset]."
     },
     {
       "type": "code",
@@ -588,11 +605,11 @@
         "    ports:",
         "    - \"3306:3306\"",
         "  web:",
-        "    image: php:7.1-apache",
+        "    image: node:10",
         "    depends_on:",
         "    - db",
         "    ports:",
-        "    - \"8100:80\""
+        "    - \"8100:3000\""
       ]
     },
     {

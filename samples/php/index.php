@@ -16,6 +16,7 @@
 </head>
 <body>
 Hey there <?php echo $_GET["name"] ?: "World"; ?>
-<br/>OttawaPHP
+<br/>
+Hello JSKongress
 </body>
 </html>
