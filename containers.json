@@ -1,12 +1,12 @@
 {
   "title": "Containers for Developers",
   "presenter": "Joel Lord",
-  "date": "May 15, 2020",
-  "conference": "JSKongress",
-  "location": "Munich, DE",
+  "date": "April 4, 2020",
+  "conference": "MidwestPHP",
+  "location": "The Internets",
   "twitter": {
     "presenter": "@joel__lord",
-    "event": "#jskongress"
+    "event": "#mwphp20"
   },
   "frame": {                    
     "top": {                    
