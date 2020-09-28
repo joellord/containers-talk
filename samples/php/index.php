@@ -15,8 +15,8 @@
 <title>Example</title>
 </head>
 <body>
-Hey there <?php echo $_GET["name"] ?: "World"; ?>
+Hello <?php echo $_GET["name"] ?: "World"; ?>
 <br/>
-Hello JSKongress
+Hello Connect Tech
 </body>
 </html>

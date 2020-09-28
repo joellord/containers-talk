@@ -1,12 +1,12 @@
 {
-  "title": "Containers for JS Devs",
+  "title": "Conteneurs Pour Les Développeurs",
   "presenter": "Joel Lord",
-  "date": "May 7, 2020",
-  "conference": "JSVidCon",
-  "location": "The Internets",
+  "date": "19 mai 2020",
+  "conference": "NantesJS",
+  "location": "Internet",
   "twitter": {
     "presenter": "@joel__lord",
-    "event": "#virtualconference"
+    "event": "@NantesJS"
   },
   "frame": {                    
     "top": {                    
@@ -20,17 +20,18 @@
   "slides": [
     {
       "type": "title",
-      "title": "Containers for JS Devs"
+      "title": "Contenerisation En JS"
     },
     {
       "type": "split",
       "left": {
-        "title": "Hi, I'm Joel",
+        "title": "Bonjour, mon nom est Joel",
         "list": [
           "Dev Advocate @ Red Hat OpenShift",
-          "Based in Ottawa, Canada",
+          "Basé à Ottawa, Canada",
           "💓  Twitter: @joel__lord",
-          "I have stickers "
+          "J'ai des stickers... ",
+          "... Mais il faut venir les chercher"
         ]
       },
       "right": {
@@ -49,45 +50,50 @@
       }
     },
     {
+      "type": "simple",
+      "title": "Comment ça s'appelle?",
+      "text": "Conteneur, Contenant, Container ?!"
+    },
+    {
       "type": "list",
-      "title": "Why use containers?",
+      "title": "Pourquoi les utiliser?",
       "list": [
-        "Same Environment as Production",
-        "Onboarding",
-        "Open Source Contributions",
+        "Environnement dev et prod identiques",
+        "Nouveaux codeurs",
+        "Contributions Open Source",
         "Testing"
       ]
     },
     {
       "type": "list",
-      "title": "It Won't Help You With",
+      "title": "Inutile pour",
       "list": [
-        "Networking, DNS, Routing",
+        "Réseautique, DNS, Routing",
         "Scaling"
       ]
     },
     {
       "type": "simple",
-      "title": "What is a Container?",
-      "text": "A container is a standard unit of software that packages up code and all its dependencies so the application runs quickly and reliably from one computing environment to another."
+      "title": "Qu'est-ce qu'un Container?",
+      "text": "Un conteneur est une unité de logiciel qui englobe tout le code ainsi que les dépendances afin que l'application s'exécute rapidement et de façon fiable dans tous les environnements."
     },
     {
       "type": "simple",
-      "title": "What is a Container?",
-      "text": "It [...] is a lightweight, standalone, executable package of software that includes everything needed to run an application: code, runtime, system tools, system libraries and settings."
+      "title": "Qu'est-ce qu'un Container?",
+      "text": "Il s'agit en fait d'un exécutable autonome portable qui inclus tout ce qui est requis pour rouler une application. Le code, les outils système, les librairies et la configuration."
     },
     {
       "type": "simple",
-      "title": "What is a Container?",
-      "text": "It is a disposable unit. Once it's completed, it destroys itself along with all other dependencies. "
+      "title": "Qu'est-ce qu'un Container?",
+      "text": "Il s'agit d'une unité jetable. Une fois complétée, elle se détruit ainsi que toutes les dépendances."
     },
     {
       "type": "titleOnly",
-      "title": "So, just like a VM?"
+      "title": "Donc, c'est une VM?"
     },
     {
       "type": "titleOnly",
-      "title": "Nope!"
+      "title": "Non!"
     },
     {
       "type": "diagram",
@@ -98,10 +104,13 @@
         "|-------| |-------| |-------|",
         "| App A | | App B | | App C |",
         "|-------| |-------| |-------|",
-        "|   OS  | |   OS  | |   OS  |",
+        "|   SE  | |   SE  | |   SE  |",
         "--------- --------- ---------",
         "-----------------------------",
         "|         Hypervisor        |",
+        "-----------------------------",
+        "-----------------------------",
+        "|   Système d'exploitation  |",
         "-----------------------------",
         "-----------------------------",
         "|        Infrastucture      |",
@@ -120,10 +129,10 @@
         "| A | | B | | C | | D | | E |",
         "----- ----- ----- ----- -----",
         "-----------------------------",
-        "|            Docker         |",
+        "|           (Docker)        |",
         "-----------------------------",
         "-----------------------------",
-        "|           Host OS         |",
+        "|   Système d'exploitation  |",
         "-----------------------------",
         "-----------------------------",
         "|        Infrastucture      |",
@@ -132,73 +141,73 @@
     },
     {
       "type": "list",
-      "title": "Where Does Docker Fit?",
+      "title": "Et Docker dans tout ça?",
       "list": [
-        "One of various tools to run containers",
-        "Used as the base for the OCI",
-        "`podman` is an alternative for Linux"
+        "Un outil pour exécuter les containers",
+        "Base de l'OCI",
+        "`podman` est une alternative Linux"
       ]
     },
     {
       "type": "titleOnly",
-      "title": "Container In Practice"
+      "title": "Container En Pratique"
     },
     {
       "type": "speaking",
       "character": "over-cubbie",
-      "text": "Hey Joel, can you help me with this PHP code?"
+      "text": "Joel, tu peux m'aider à déboguer ce code?"
     },
     {
       "type": "speaking",
       "character": "me",
-      "text": "I don't have PHP or Apache installed on this machine but it shouldn't be a problem thanks to containers!"
+      "text": "Je n'ai pas PHP ou Apache sur cette machine mais avec les conteneurs, ça ne devrait pas causer problèmes."
     },
     {
       "type": "terminal",
       "title": "Docker Run",
-      "text": "You can use a container to run code in a different environment."
+      "text": "Utilisation d'un conteneur."
     },
     {
       "type": "code",
       "title": "Docker run",
-      "text": "Starts a container",
+      "text": "Démarrer un conteneur",
       "code": "docker run <image-name>"
     },
     {
       "type": "code",
       "title": "Docker run",
-      "text": "Starts a container",
+      "text": "Démarrer un conteneur",
       "code": "docker run [reverse]php:7.1-apache[reset]",
-      "notes": "You can find more images at [blue][underscore]http://hub.docker.com[reset]"
+      "notes": "Autres images disponibles à [blue][underscore]http://hub.docker.com[reset]"
     },
     {
       "type": "code",
       "title": "Docker run",
-      "text": "Starts a container",
+      "text": "Démarrer un conteneur",
       "code": "docker run [reverse]-p 8080:80[reset] php:7.1-apache",
-      "notes": "Maps port 8080 on your local machine (host) to the port 80 in the container."
+      "notes": "Mapper le port 8080 sur votre machine (hôte) au port 80 dans le conteneur."
     },
     {
       "type": "code",
       "title": "Docker run",
-      "text": "Starts a container",
+      "text": "Démarrer un conteneur",
       "code": "docker run [reverse]-v $(pwd):/var/www/html[reset] -p 8080:80 php:7.1-apache",
-      "notes": "Mounts your current folder in the /var/www/html folder of the container so it will serve your local files."
+      "notes": "Monter le dossier actuel dans /var/www/html à l'intérieur du conteneur."
     },
     {
       "type": "list",
       "title": "Docker run",
-      "subtitle": "Other useful flags",
+      "subtitle": "Autres commandes",
       "list": [
-        "[cyan]-d[reset] runs docker in detached mode (background)",
-        "[cyan]--rm[reset] removes the container after it stopped",
-        "[cyan]--name[reset] names your container"
+        "[cyan]-d[reset] mode détaché (en arrière-plan)",
+        "[cyan]--rm[reset] efface le conteneur après usage",
+        "[cyan]--name[reset] nomme le conteneur"
       ]
     },
     {
       "type": "code",
       "title": "Docker run",
-      "text": "Starts a container",
+      "text": "Démarrer un conteneur",
       "multistep": true,
       "multistepType": "highlight",
       "code": "[reverse]docker run[reset] [reverse]-d[reset] [reverse]--rm[reset] [reverse]--name my-php[reset] [reverse]-v $(pwd):/var/www/html[reset] [reverse]-p 8080:80[reset] [reverse]php:7.1-apache[reset]"
@@ -206,32 +215,32 @@
     {
       "type": "terminal",
       "title": "Docker Run",
-      "text": "You can use a container to run code in a different environment."
+      "text": "Utilisation d'un conteneur."
     },
     {
       "type": "speaking",
       "character": "over-cubbie",
-      "text": "This is a JS conference, how about JS examples."
+      "text": "Tabarnak, c'est Nantes JS, pas PHP."
     },
     {
       "type": "code",
       "title": "Docker Run",
       "multistep": true,
       "multistepType": "highlight",
-      "text": "Nginx is a fast and easy to use open source web server",
+      "text": "Nginx est un serveur open-source rapide et facile d'utilisation",
       "code": "docker run -d --rm --name mynginx -p 8080:80 [reverse]-v $(pwd):/usr/share/nginx/html[reset] [reverse]nginx:1.17-alpine[reset]"
     },
     {
       "type": "terminal",
       "title": "Docker Run",
-      "text": "Serve static files with nginx"
+      "text": "Fichiers statiques avec nginx"
     },
     {
       "type": "code",
-      "title": "Pro Tip (*nix)",
-      "text": "Create an alias to quickly start/stop nginx servers in your [reverse]~/.zshrc[reset] file",
+      "title": "Astuce de pro (*nix)",
+      "text": "Créer un alias pour démarrer ou arrêter un serveur nginx dans [reverse]~/.zshrc[reset]",
       "code": [
-        "alias start-nginx=\"docker run -d --rm --name static -p 8080:80 -v $(pwd):/usr/share/nginx/html nginx:1.17-alpine\"",
+        "alias start-nginx=\"docker run -d --rm --name static [...] nginx:1.17-alpine\"",
         "alias stop-nginx=\"docker stop static\""
       ]
     },
@@ -240,7 +249,7 @@
       "title": "Docker run",
       "multistep": true,
       "multistepType": "highlight",
-      "text": "Run a Node command line script",
+      "text": "Exécuter un script NodeJs",
       "code": "docker run [reverse]-v $(pwd):/app[reverse] [reverse]node:10[reset] [reverse]node /app/cli.js[reset]"
     },
     {
@@ -248,86 +257,76 @@
       "title": "Docker run",
       "multistep": true,
       "multistepType": "highlight",
-      "text": "Run a Node command line script",
+      "text": "Exécuter un script NodeJs",
       "code": "docker run -v $(pwd):/app [reverse]-w /app[reset] node:10 [reverse]node cli.js[reset]",
       "notes": "You can also use a working directory and run the script from there."
     },
     {
       "type": "terminal",
       "title": "Docker Run",
-      "text": "Run a Node command line script"
+      "text": "Exécuter un script NodeJs"
     },
     {
       "type": "code",
       "title": "Docker run",
       "multistep": true,
       "multistepType": "highlight",
-      "text": "Run a NodeJS/Express server",
+      "text": "Exécuter un serveur NodeJS/Express",
       "code": "docker run [reverse]-d[reset] -v $(pwd):/app [reverse]-p 8080:3000[reset] node:10 [reverse]node /app[reset]"
     },
     {
       "type": "terminal",
       "title": "Docker Run",
-      "text": "Run a NodeJS/Express server"
+      "text": "Exécuter un serveur NodeJS/Express"
     },
     {
       "type": "titleOnly",
-      "title": "No More \"Works On My Machine\""
+      "title": "Fini les \"Works On My Machine\""
     },
     {
       "type": "speaking",
       "character": "me",
-      "text": "I'm getting this weird error. Something about a file not found."
+      "text": "J'ai ce bizarre message d'erreur. Quelque chose à propos d'un fichier inexistant."
     },
     {
       "type": "speaking",
       "character": "over-cubbie",
-      "text": "Do you have the file C:\\temp\\log.txt ?"
+      "text": "Tu as le fichier C:\\temp\\log.txt ?"
     },
     {
       "type": "speaking",
       "character": "me-oh-no",
-      "text": "ARGH! Hard coded path!"
+      "text": "ARGH! Paramètres hard-codé!"
     },
     {
       "type": "list",
-      "title": "Environment variables",
+      "title": "Variables d'Environnement",
       "list": [
-        "Store variables that can be specific to your environment",
-        "File names, port, base url, ..."
+        "Storer des données spécifiques à l'environnement.",
+        "Noms de fichiers, ports, URL de l'API, ..."
       ]
     },
     {
       "type": "code",
-      "title": "Environment variables",
-      "text": "Use the -e flag to pass env variables to docker",
+      "title": "Variables d'Environnement",
+      "text": "Utiliser -e pour passer une variable d'environnement à Docker",
       "code": "docker run [reverse]-e BASE_URL='http://localhost:8888'[reset] node:10"
     },
     {
       "type": "code",
-      "title": "Environment variables",
-      "text": "Accessing environment variables in NodeJS",
+      "title": "Variables d'Environnement",
+      "text": "Accéder une variable d'environnement dans NodeJS",
       "code": "[yellow]console[reset].[yellow]log[reset]([cyan]`Base URL is [blue]${[blue][bright]process.env.BASE_URL[reset][blue]}[cyan]`[reset]);"
     },
     {
-      "type": "code",
-      "title": "Environment variables",
-      "text": "Accessing environment variables in PHP",
-      "code": [
-        "[blue]<?[reset]",
-        "  [yellow]echo[reset] [cyan]\"Base URL is \"[reset].[yellow]$_ENV[reset][[cyan]'BASE_URL'[reset]];",
-        "[blue]?>[reset]"
-      ]
-    },
-    {
       "type": "terminal",
-      "title": "Environment variables",
-      "text": "Changing our ENV variables for our NodeJS script"
+      "title": "Variables d'Environnement",
+      "text": "Changer les variables ENV dans NodeJS"
     },
     {
       "type": "code",
-      "title": "Environment Variables For Containers",
-      "text": "Run a MySQL Database",
+      "title": "Variables d'Environnement",
+      "text": "Démarrer MySQL",
       "code": [
         "docker run --rm --name mymysql \\",
         "  -e MYSQL_ROOT_PASSWORD=root \\",
@@ -339,8 +338,8 @@
     },
     {
       "type": "code",
-      "title": "Environment Variables For Containers",
-      "text": "Run a MySQL Database",
+      "title": "Variables d'Environnement",
+      "text": "Démarrer MySQL",
       "code": [
         "docker run --rm --name mymysql \\",
         "  -e MYSQL_ROOT_PASSWORD=root \\",
@@ -353,26 +352,25 @@
     },
     {
       "type": "terminal",
-      "title": "MySQL and phpMyAdmin",
+      "title": "MySQL et phpMyAdmin",
       "text": ""     
     },
     {
       "type": "titleOnly",
-      "title": "More than a CLI"
+      "title": "Plus qu'un outil CLI"
     },
     {
       "type": "speaking",
       "character": "silly-face",
-      "text": "I don't think I can remember all those commands!"
+      "text": "Je n'arriverai jamais à me souvenir de toutes ces commandes."
     },
     {
       "type": "list",
-      "title": "Introducing the Dockerfile",
+      "title": "Introduction à Dockerfile",
       "list": [
-        "Same options as in the command line",
-        "Standardized set of commands",
-        "Lets you build your own images for sharing",
-        "Builds stacks that can be shared"
+        "Similaire aux lignes de commande",
+        "Ensemble d'instructions standardisées",
+        "Construire votre propre image afin de la partager"
       ]
     },
     {
@@ -380,7 +378,7 @@
       "title": "Dockerfile",
       "multistep": true,
       "multistepType": "line",
-      "text": "A simple Dockerfile to be used to build a NodeJs project",
+      "text": "Un simple Dockerfile pour démarrer une appli NodeJS",
       "code": [
         "[yellow]FROM[reset] node:10",
         "[yellow]EXPOSE[reset] 3000",
@@ -395,7 +393,7 @@
       "title": "Dockerfile",
       "multistep": true,
       "multistepType": "line",
-      "text": "Because each layer counts, this can be optimized",
+      "text": "On peut optimiser en utilisant le cache",
       "code": [
         "[yellow]FROM[reset] node:10",
         "[yellow]EXPOSE[reset] 3000",
@@ -409,46 +407,65 @@
     {
       "type": "code",
       "title": "Dockerfile",
-      "text": "\"Compile\" your own images",
+      "text": "\"Compiler\" ses propres images",
       "code": "docker build <pathToDockerfile>",
-      "notes": "Once you have your images, your can share them on registries like [blue][underscore]http://hub.docker.com[reset] or [blue][underscore]http://quay.io[reset]."
+      "notes": "Une fois l'image créée, il est possible de la partager sur un registre comme [blue][underscore]http://hub.docker.com[reset] ou [blue][underscore]http://quay.io[reset]."
     },
     {
       "type": "code",
       "title": "Dockerfile",
-      "text": "\"Compile\" your own images",
+      "text": "\"Compiler\" ses propres images",
       "code": "docker build [reverse].[reset]",
-      "notes": "Once you have your images, your can share them on registries like [blue][underscore]http://hub.docker.com[reset] or [blue][underscore]http://quay.io[reset]."
+      "notes": "Une fois l'image créée, il est possible de la partager sur un registre comme [blue][underscore]http://hub.docker.com[reset] ou [blue][underscore]http://quay.io[reset]."
     },
     {
       "type": "code",
       "title": "Dockerfile",
-      "text": "\"Compile\" your own images",
+      "text": "\"Compiler\" ses propres images",
       "code": "docker build [reverse]-t myimage:1[reset] .",
-      "notes": "Once you have your images, your can share them on registries like [blue][underscore]http://hub.docker.com[reset] or [blue][underscore]http://quay.io[reset]."
+      "notes": "Une fois l'image créée, il est possible de la partager sur un registre comme [blue][underscore]http://hub.docker.com[reset] ou [blue][underscore]http://quay.io[reset]."
+    },
+    {
+      "type": "code",
+      "title": "Dockerfile",
+      "multistep": true,
+      "multistepType": "line",
+      "text": "Un cas plus complexe",
+      "code": [
+        "[yellow]FROM[reset] node:12",
+        "[yellow]COPY[reset] . /app",
+        "[yellow]WORKDIR[reset] /app",
+        "[yellow]RUN[reset] npm install",
+        "[yellow]RUN[reset] npm run build",
+        "",
+        "[yellow]FROM[reset] nginx:1.17",
+        "[yellow]WORKDIR[reset] /usr/share/nginx/html",
+        "[yellow]COPY[reset] --from=0 /app/dist .",
+        "[yellow]EXPOSE[reset] 80"
+      ]
     },
     {
       "type": "simple",
-      "title": "[red][blink]WARNING[reset]",
-      "text": "Your containers might be running as root."
+      "title": "[red][blink]DANGER[reset]",
+      "text": "Vos containers pourraient utiliser root"
     },
     {
       "type": "list",
       "title": "Docker build",
       "list": [
-        "Creates a full custom image",
-        "Images can be shared on registries",
-        "Image is ready to share with team or to deploy"
+        "Créer une image personnalisée",
+        "Ces images peuvent être partagées sur des registres",
+        "L'image peut être partagée avec votre équipe ou déployée"
       ]
     },
     {
       "type": "titleOnly",
-      "title": "Sharing Is Caring"
+      "title": "Partager C'est Aimer"
     },
     {
       "type": "list",
-      "title": "Registries",
-      "subtitle": "You can share to public or private registries",
+      "title": "Registres",
+      "subtitle": "Vous pouvez partager dans un registre privé ou public",
       "list": [
         "Docker Hub ([blue][underscore]http://hub.docker.com[reset])",
         "Quay ([blue][underscore]http://quay.io[reset]) - Open Source",
@@ -457,122 +474,122 @@
     },
     {
       "type": "code",
-      "title": "Sharing",
-      "text": "To publish to a registry, use push",
+      "title": "Partager",
+      "text": "Publier dans un registre avec `push`",
       "code": "docker push <registry/username/container-name>",
-      "notes": "In order to publish to a registry, you will have to sign in the latter using [cyan]docker login[reset]."
+      "notes": "Afin de publier dans un registre, il faut vous connecter avec [cyan]docker login[reset]."
     },
     {
       "type": "code",
-      "title": "Sharing",
-      "text": "To publish to a registry, use push",
+      "title": "Partager",
+      "text": "Publier dans un registre avec `push`",
       "code": "docker push [reverse]quay.io/joellord/my-php[reset]",
-      "notes": "In order to publish to a registry, you will have to sign in the latter using [cyan]docker login[reset]."
+      "notes": "Afin de publier dans un registre, il faut vous connecter avec [cyan]docker login[reset]."
     },
     {
       "type": "code",
-      "title": "Sharing",
-      "text": "To download an image, use pull",
+      "title": "Partager",
+      "text": "Télécharger une image avec `pull`",
       "code": "docker pull <registry/username/container-name>"
     },
     {
       "type": "code",
-      "title": "Sharing",
-      "text": "To download an image, use pull",
+      "title": "Partager",
+      "text": "Télécharger une image avec `pull`",
       "code": "docker pull [reverse]quay.io/joellord/my-nodejs[reset]"
     },
     {
       "type": "titleOnly",
-      "title": "More Useful Commands"
+      "title": "Autre commandes utiles"
     },
     {
       "type": "list",
-      "title": "Docker run",
-      "subtitle": "Other useful commands",
+      "title": "Docker",
+      "subtitle": "Autre commandes utiles",
       "list": [
-        "[cyan]docker ps[reset] Lists running containers",
-        "[cyan]docker ps -a[reset] List all containers",
-        "[cyan]docker stop <image>[reset] Stop a running container",
-        "[cyan]docker rm <image>[reset] Removes a container",
-        "[cyan]docker tag <image> <newImageName>[reset] Renames a container"
+        "[cyan]docker ps[reset] Lister les conteneurs actifs",
+        "[cyan]docker ps -a[reset] Lister tous les conteneurs",
+        "[cyan]docker stop <image>[reset] Arrêter un conteneur",
+        "[cyan]docker rm <image>[reset] Effacer un conteneur",
+        "[cyan]docker tag <image> <newImageName>[reset] Renommer un conteneur"
       ]
     },
     {
       "type": "terminal",
-      "title": "Useful commands",
+      "title": "Autre commandes utiles",
       "text": "(ps, stop, rm)"
     },
     {
       "type": "speaking",
       "character": "silly-face",
-      "text": "Sure, it's all nice in theory but my containers never behave like I want them to!"
+      "text": "C'est bien beau en théorie, mais ça ne fonctionne jamais comme je veux!"
     },
     {
       "type": "titleOnly",
-      "title": "Debugging"
+      "title": "Déboguage"
     },
     {
       "type": "code",
       "title": "Docker logs",
-      "text": "You can see the latest logs in a given container",
+      "text": "Vous pouvez voir les logs d'un conteneur",
       "code": "docker logs <container-name>"
     },
     {
       "type": "code",
       "title": "Docker logs",
-      "text": "You can see the latest logs in a given container",
+      "text": "Vous pouvez voir les logs d'un conteneur",
       "code": "docker logs [reverse]mynode[reset]",
-      "notes": "It makes it easier when you have given a name to your container using the [cyan]--name[reset] flag."
+      "notes": "Il est plus facile de retrouver une conteneur lorsqu'il a été nommé avec [cyan]--name[reset]."
     },
     {
       "type": "code",
       "title": "Docker logs",
-      "text": "You can see the latest logs in a given container",
+      "text": "Vous pouvez voir les logs d'un conteneur",
       "code": "docker logs [reverse]-f[reset] mynode",
-      "notes": "By using the [cyan]-f[reset] flag, you can look at the logs in real-time."
+      "notes": "En utilisant le paramètre [cyan]-f[reset], vous pouvez accéder aux logs en temps réel."
     },
     {
       "type": "terminal",
-      "title": "Debugging"
+      "title": "Déboguage"
     },
     {
       "type": "code",
       "title": "Docker exec",
-      "text": "Run a command inside your container",
+      "text": "Exécuter une commande à l'intérieur du conteneur",
       "code": "docker exec <image-name> <executable> <args>"
     },
     {
       "type": "code",
       "title": "Docker exec",
-      "text": "Run a command inside your container",
+      "text": "Exécuter une commande à l'intérieur du conteneur",
       "code": "docker exec mynode [reverse]/bin/ls /var/www/html[reset]",
-      "notes": "This runs a command available inside your container. In this case, using /bin/ls will still work if the container runs in Windows"
+      "notes": "Cette commande est exécutée à l'intérieur du conteneur. Pour voir le contenu d'un répertoire, il faut utiliser /bin/ls et ce, même sous Windows."
     },
     {
       "type": "code",
       "title": "Docker exec",
-      "text": "Log into your container with exec",
+      "text": "Se connecter à un conteneur",
       "code": "docker exec [reverse]-it[reset] mynode [reverse]/bin/bash[reset]",
-      "notes": "The -it specifies that this will be an interactive command (and won't work in the slides)."
+      "notes": "Le paramètre -it spécifie qu'il s'agit d'une commande interactive."
     },
     {
       "type": "code",
       "title": "Docker cp",
-      "text": "Copy files from the container to your machine",
+      "text": "Copier des fichiers du conteneur vers votre machine",
       "code": "docker cp <image-name>:<path-to-file> <destination>",
-      "notes": "Useful when you need to access or verify the configuration files on your server."
+      "notes": "Pratique pour vérifier un fichier de configuration du serveur."
     },
     {
       "type": "code",
       "title": "Docker cp",
-      "text": "Copy files from the container to your machine",
+      "text": "Copier des fichiers du conteneur vers votre machine",
       "code": "docker cp [reverse]mynode:/app/package-lock.json[reset] [reverse].[reset]",
-      "notes": "Useful when you need to access or verify the configuration files on your server."
+      "notes": "Pratique pour vérifier un fichier de configuration du serveur."
     },
     {
       "type": "code",
       "title": "Docker cp",
-      "text": "Copy files from your machine to the container",
+      "text": "Copier des fichiers de votre machine vers le conteneur",
       "code": "docker cp <path-to-file> <image-name>:<destination>"
     },
     {
@@ -581,22 +598,22 @@
     },
     {
       "type": "list",
-      "title": "Debugging",
+      "title": "Déboguage",
       "list": [
-        "[cyan]docker logs[reset] to view container logs",
-        "[cyan]docker exec[reset] to run commands in your container (or log in)",
-        "[cyan]docker cp[reset] to copy files to/from your containers"
+        "[cyan]docker logs[reset] voir les logs",
+        "[cyan]docker exec[reset] exécuter une commande",
+        "[cyan]docker cp[reset] copier des fichier"
       ]
     },
     {
       "type": "simple",
-      "title": "Running Multiple Containers",
-      "text": "If you have multiple containers (ie NodeJS + MySQL), you might want to look into [cyan]docker-compose[reset]."
+      "title": "Multiples conteneurs",
+      "text": "Si vous avez de multiples conteneurs (ie NodeJS + MySQL), vous devez regarder [cyan]docker-compose[reset]."
     },
     {
       "type": "code",
       "title": "Docker Compose",
-      "text": "Uses YAML files to describe all the containers",
+      "text": "Utilises un fichier YAML pour décrire l'architecture.",
       "code": [
         "version: '3'",
         "services:",
@@ -615,32 +632,32 @@
     {
       "type": "code",
       "title": "Docker Compose",
-      "text": "Start all your containers with one command",
+      "text": "Démarrer tous les conteneurs avec une seule commande",
       "code": "docker-compose up"
     },
     {
       "type": "titleOnly",
-      "title": "Should You Use Them?"
+      "title": "Devriez-vous les utiliser?"
     },
     {
       "type": "simple",
-      "title": "Day To Day Development",
-      "text": "Yes!"
+      "title": "Développement de tous les jours",
+      "text": "Oui!"
     },
     {
       "type": "simple",
       "title": "Testing",
-      "text": "Yes!"
+      "text": "Oui!"
     },
     {
       "type": "simple",
-      "title": "Open Source Projects",
-      "text": "Yes, Yes and Yes!"
+      "title": "Projets Open Source",
+      "text": "Oui, Oui et Oui!"
     },
     {
       "type": "simple",
-      "title": "Thank You",
-      "text": "More information available at\n[blue][underscore]http://ezurl.to/containers[reset]\n\nReach out on Twitter at [blue][bright]@joel__lord[reset]"
+      "title": "Merci!",
+      "text": "Plus d'informations au \n[blue][underscore]http://ezurl.to/containers[reset]\n\nRetrouvez moi sur Twitter [blue][bright]@joel__lord[reset]"
     }
   ]
 }
