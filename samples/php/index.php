@@ -17,6 +17,6 @@
 <body>
 Hello <?php echo $_GET["name"] ?: "World"; ?>
 <br/>
-Hello Connect Tech
+Hello CWITC
 </body>
 </html>
