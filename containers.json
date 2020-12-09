@@ -1,12 +1,12 @@
 {
   "title": "Containers for Developers",
   "presenter": "Joel Lord",
-  "date": "October 3, 2020",
-  "conference": "Central Wisconsin IT Conf",
+  "date": "December 9, 2020",
+  "conference": "Webinale",
   "location": "The Internets",
   "twitter": {
     "presenter": "@joel__lord",
-    "event": "#CWITC"
+    "event": "#webinale #ipc"
   },
   "frame": {                    
     "top": {                    
@@ -28,9 +28,8 @@
         "title": "Hi, I'm Joel",
         "list": [
           "Dev Advocate @ Red Hat OpenShift",
-          "Based in Ottawa",
-          "💓  Twitter: @joel__lord",
-          "I have stickers "
+          "Based in Ottawa, Canada",
+          "💓  Twitter: @joel__lord"
         ]
       },
       "right": {
@@ -168,21 +167,21 @@
       "type": "code",
       "title": "Docker run",
       "text": "Starts a container",
-      "code": "docker run [reverse]php:7.1-apache[reset]",
+      "code": "docker run [reverse]php:7.4-apache[reset]",
       "notes": "You can find more images at [blue][underscore]http://hub.docker.com[reset]"
     },
     {
       "type": "code",
       "title": "Docker run",
       "text": "Starts a container",
-      "code": "docker run [reverse]-p 8080:80[reset] php:7.1-apache",
+      "code": "docker run [reverse]-p 8080:80[reset] php:7.4-apache",
       "notes": "Maps port 8080 on your local machine (host) to the port 80 in the container."
     },
     {
       "type": "code",
       "title": "Docker run",
       "text": "Starts a container",
-      "code": "docker run [reverse]-v $(pwd):/var/www/html[reset] -p 8080:80 php:7.1-apache",
+      "code": "docker run [reverse]-v $(pwd):/var/www/html[reset] -p 8080:80 php:7.4-apache",
       "notes": "Mounts your current folder in the /var/www/html folder of the container so it will serve your local files."
     },
     {
@@ -201,7 +200,7 @@
       "text": "Starts a container",
       "multistep": true,
       "multistepType": "highlight",
-      "code": "[reverse]docker run[reset] [reverse]-d[reset] [reverse]--rm[reset] [reverse]--name my-php[reset] [reverse]-v $(pwd):/var/www/html[reset] [reverse]-p 8080:80[reset] [reverse]php:7.1-apache[reset]"
+      "code": "[reverse]docker run[reset] [reverse]-d[reset] [reverse]--rm[reset] [reverse]--name my-php[reset] [reverse]-v $(pwd):/var/www/html[reset] [reverse]-p 8080:80[reset] [reverse]php:7.4-apache[reset]"
     },
     {
       "type": "terminal",
@@ -214,7 +213,7 @@
       "multistep": true,
       "multistepType": "highlight",
       "text": "Run a PHP command line script",
-      "code": "docker run -v $(pwd):/app [reverse]php:7.1[reset] [reverse]php /app/cli.php[reset]"
+      "code": "docker run -v $(pwd):/app [reverse]php:7.4[reset] [reverse]php /app/cli.php[reset]"
     },
     {
       "type": "code",
@@ -222,7 +221,7 @@
       "multistep": true,
       "multistepType": "highlight",
       "text": "Run a PHP command line script",
-      "code": "docker run -v $(pwd):/app [reverse]-w /app[reset] php:7.1 [reverse]php cli.php[reset]",
+      "code": "docker run -v $(pwd):/app [reverse]-w /app[reset] php:7.4 [reverse]php cli.php[reset]",
       "notes": "You can also use a working directory and run the script from there."
     },
     {
@@ -234,7 +233,7 @@
       "type": "code",
       "title": "Docker run",
       "text": "Run a NodeJS/Express server",
-      "code": "docker run -v $(pwd):/app -p 8080:3000 [reverse]node:10[reset] node /app"
+      "code": "docker run -v $(pwd):/app -p 8080:3000 [reverse]node:14[reset] node /app"
     },
     {
       "type": "terminal",
@@ -272,7 +271,7 @@
       "type": "code",
       "title": "Environment variables",
       "text": "Use the -e flag to pass env variables to docker",
-      "code": "docker run [reverse]-e BASE_URL='http://localhost:8888'[reset] php:7.1-apache"
+      "code": "docker run [reverse]-e BASE_URL='http://localhost:8888'[reset] php:7.4-apache"
     },
     {
       "type": "code",
@@ -353,7 +352,7 @@
       "multistepType": "line",
       "text": "A Dockerfile for a PHP project",
       "code": [
-        "[yellow]FROM[reset] php:7.1-apache",
+        "[yellow]FROM[reset] php:7.4-apache",
         "[yellow]EXPOSE[reset] 80",
         "[yellow]COPY[reset] . /var/www/html"
       ]
@@ -365,7 +364,7 @@
       "multistepType": "line",
       "text": "A simple Dockerfile to be used to build a NodeJs project",
       "code": [
-        "[yellow]FROM[reset] node:10",
+        "[yellow]FROM[reset] node:14",
         "[yellow]EXPOSE[reset] 3000",
         "[yellow]COPY[reset] . /app",
         "[yellow]WORKDIR[reset] /app",
@@ -380,7 +379,7 @@
       "multistepType": "line",
       "text": "Because each layer counts, this can be optimized",
       "code": [
-        "[yellow]FROM[reset] node:10",
+        "[yellow]FROM[reset] node:14",
         "[yellow]EXPOSE[reset] 3000",
         "[yellow]COPY[reset] package.json /app",
         "[yellow]WORKDIR[reset] /app",
@@ -588,7 +587,7 @@
         "    ports:",
         "    - \"3306:3306\"",
         "  web:",
-        "    image: php:7.1-apache",
+        "    image: php:7.4-apache",
         "    depends_on:",
         "    - db",
         "    ports:",

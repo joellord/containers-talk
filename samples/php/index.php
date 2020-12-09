@@ -17,6 +17,6 @@
 <body>
 Hello <?php echo $_GET["name"] ?: "World"; ?>
 <br/>
-Hello CWITC
+Halo Berlin
 </body>
 </html>
