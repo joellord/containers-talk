@@ -1,12 +1,12 @@
 {
   "title": "Containers for JS Devs",
   "presenter": "Joel Lord",
-  "date": "May 7, 2020",
-  "conference": "JSVidCon",
-  "location": "The Internets",
+  "date": "April 19, 2021",
+  "conference": "iJS London",
+  "location": "Online",
   "twitter": {
     "presenter": "@joel__lord",
-    "event": "#virtualconference"
+    "event": "#iJScon"
   },
   "frame": {                    
     "top": {                    
@@ -29,8 +29,7 @@
         "list": [
           "Dev Advocate @ Red Hat OpenShift",
           "Based in Ottawa, Canada",
-          "💓  Twitter: @joel__lord",
-          "I have stickers "
+          "💓  Twitter: @joel__lord"
         ]
       },
       "right": {
@@ -104,6 +103,9 @@
         "|         Hypervisor        |",
         "-----------------------------",
         "-----------------------------",
+        "|           Host OS         |",
+        "-----------------------------",
+        "-----------------------------",
         "|        Infrastucture      |",
         "-----------------------------"
       ]
@@ -120,7 +122,7 @@
         "| A | | B | | C | | D | | E |",
         "----- ----- ----- ----- -----",
         "-----------------------------",
-        "|            Docker         |",
+        "|          ( Docker )       |",
         "-----------------------------",
         "-----------------------------",
         "|           Host OS         |",
@@ -241,7 +243,7 @@
       "multistep": true,
       "multistepType": "highlight",
       "text": "Run a Node command line script",
-      "code": "docker run [reverse]-v $(pwd):/app[reverse] [reverse]node:10[reset] [reverse]node /app/cli.js[reset]"
+      "code": "docker run [reverse]-v $(pwd):/app[reverse] [reverse]node:14[reset] [reverse]node /app/cli.js[reset]"
     },
     {
       "type": "code",
@@ -249,7 +251,7 @@
       "multistep": true,
       "multistepType": "highlight",
       "text": "Run a Node command line script",
-      "code": "docker run -v $(pwd):/app [reverse]-w /app[reset] node:10 [reverse]node cli.js[reset]",
+      "code": "docker run -v $(pwd):/app [reverse]-w /app[reset] node:14 [reverse]node cli.js[reset]",
       "notes": "You can also use a working directory and run the script from there."
     },
     {
@@ -263,7 +265,28 @@
       "multistep": true,
       "multistepType": "highlight",
       "text": "Run a NodeJS/Express server",
-      "code": "docker run [reverse]-d[reset] -v $(pwd):/app [reverse]-p 8080:3000[reset] node:10 [reverse]node /app[reset]"
+      "code": "docker run [reverse]-d[reset] -v $(pwd):/app [reverse]-p 8080:3000[reset] node:14 [reverse]node /app[reset]"
+    },
+    {
+      "type": "speaking",
+      "character": "over-cubbie",
+      "text": "Psst. Version 14 is so 2020, version 16 was released today!"
+    },
+    {
+      "type": "speaking",
+      "character": "me",
+      "text": "Not a problem!"
+    },
+    {
+      "type": "code",
+      "title": "Docker run",
+      "text": "Run a NodeJS/Express server",
+      "code": "docker run [reverse]-d[reset] -v $(pwd):/app [reverse]-p 8080:3000[reset] node:14 [reverse]node /app[reset]"
+    },    {
+      "type": "code",
+      "title": "Docker run",
+      "text": "Run a NodeJS/Express server",
+      "code": "docker run [reverse]-d[reset] -v $(pwd):/app [reverse]-p 8080:3000[reset] node:16 [reverse]node /app[reset]"
     },
     {
       "type": "terminal",

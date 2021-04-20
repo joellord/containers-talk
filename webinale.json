@@ -1,12 +1,12 @@
 {
   "title": "Containers for Developers",
   "presenter": "Joel Lord",
-  "date": "March 30, 2021",
-  "conference": "OpenSource 101",
+  "date": "December 9, 2020",
+  "conference": "Webinale",
   "location": "The Internets",
   "twitter": {
     "presenter": "@joel__lord",
-    "event": "#containers"
+    "event": "#webinale #ipc"
   },
   "frame": {                    
     "top": {                    
@@ -28,7 +28,6 @@
         "title": "Hi, I'm Joel",
         "list": [
           "Dev Advocate @ Red Hat OpenShift",
-          "Egghead author",
           "Based in Ottawa, Canada",
           "💓  Twitter: @joel__lord"
         ]
@@ -104,9 +103,6 @@
         "|         Hypervisor        |",
         "-----------------------------",
         "-----------------------------",
-        "|           Host OS         |",
-        "-----------------------------",
-        "-----------------------------",
         "|        Infrastucture      |",
         "-----------------------------"
       ]
@@ -123,7 +119,7 @@
         "| A | | B | | C | | D | | E |",
         "----- ----- ----- ----- -----",
         "-----------------------------",
-        "|          ( Docker )       |",
+        "|            Docker         |",
         "-----------------------------",
         "-----------------------------",
         "|           Host OS         |",
@@ -357,6 +353,7 @@
       "text": "A Dockerfile for a PHP project",
       "code": [
         "[yellow]FROM[reset] php:7.4-apache",
+        "[yellow]EXPOSE[reset] 80",
         "[yellow]COPY[reset] . /var/www/html"
       ]
     },
@@ -372,22 +369,6 @@
         "[yellow]COPY[reset] . /app",
         "[yellow]WORKDIR[reset] /app",
         "[yellow]RUN[reset] npm install",
-        "[yellow]CMD[reset] npm start"
-      ]
-    },
-    {
-      "type": "code",
-      "title": "Dockerfile",
-      "multistep": true,
-      "multistepType": "line",
-      "text": "Because each layer counts, this can be optimized",
-      "code": [
-        "[yellow]FROM[reset] node:14",
-        "[yellow]EXPOSE[reset] 3000",
-        "[yellow]COPY[reset] package.json /app",
-        "[yellow]WORKDIR[reset] /app",
-        "[yellow]RUN[reset] npm install",
-        "[yellow]COPY[reset] . /app",
         "[yellow]CMD[reset] npm start"
       ]
     },
@@ -411,11 +392,6 @@
       "text": "\"Compile\" your own images",
       "code": "docker build [reverse]-t myimage:1[reset] .",
       "notes": "Once you have your images, your can share them on registries like [blue][underscore]http://hub.docker.com[reset] or [blue][underscore]http://quay.io[reset]."
-    },
-    {
-      "type": "simple",
-      "title": "[red][blink]WARNING[reset]",
-      "text": "Your containers might be running as root."
     },
     {
       "type": "list",

@@ -4,3 +4,4 @@ create table conferences( id INT AUTO_INCREMENT PRIMARY KEY, name VARCHAR(100), 
 insert into conferences (name, date, hashtag) values("Boston Code Camp", "2019-11-23 9:00:00", "#BosCC");
 insert into conferences (name, date, hashtag) values("Ottawa PHP", "2020-01-22 9:00:00", "#OttawaPHP");
 insert into conferences (name, date, hashtag) values("PHP UK", "2020-02-21 9:00:00", "#phpuk20");
+insert into conferences (name, date, hashtag) values("OKC WebDevs", "2021-01-19 11:30:00", "#okcwebdevs");

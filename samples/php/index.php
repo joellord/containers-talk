@@ -16,7 +16,6 @@
 </head>
 <body>
 Hello <?php echo $_GET["name"] ?: "World"; ?>
-<br/>
-Halo Berlin
+Hello Egghead
 </body>
 </html>

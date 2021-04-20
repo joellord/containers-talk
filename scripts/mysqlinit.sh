@@ -1,3 +1,3 @@
 echo -e "docker run -d --rm --name mymysql\n -e MYSQL_ROOT_PASSWORD=root\n -e MYSQL_USER=user\n -e MYSQL_PASSWORD=pass\n -p 3306:3306\n -v $(pwd)/samples/mysql/init.sql:/docker-entrypoint-initdb.d/init.sql\n mysql:5.7"
 
-docker run -d --rm --name mymysql -e MYSQL_ROOT_PASSWORD=root -e MYSQL_USER=user -e MYSQL_PASSWORD=pass -p 3306:3306 -v $(pwd)/samples/mysql/init.sql:/docker-entrypoint-initdb.d/init.sql mysql:5.7   
+docker run -d --rm --name mymysql -e MYSQL_ROOT_PASSWORD=root -e MYSQL_USER=user -e MYSQL_PASSWORD=pass -p 3306:3306 -v $(pwd)/samples/mysql/init.sql:/docker-entrypoint-initdb.d/init.sql:z --network containers-talk mysql:5.7   
