@@ -16,6 +16,6 @@
 </head>
 <body>
 Hello <?php echo $_GET["name"] ?: "World"; ?>
-Hello Egghead
+Hello iJS!
 </body>
 </html>

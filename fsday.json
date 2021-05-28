@@ -1,0 +1,109 @@
+{
+  "$schema": "https://raw.githubusercontent.com/Favna/cli-slides/feat/add-json-schema/assets/json-schema.json",
+  "title": "Containers for JS Devs",
+  "presenter": "Joel Lord",
+  "date": "April 21, 2021",
+  "conference": "iJS London",
+  "location": "Online",
+  "twitter": {
+    "presenter": "@joel__lord",
+    "event": "#iJScon"
+  },
+  "frame": {                    
+    "top": {                    
+      "center": "title"         
+    },
+    "bottom": {                 
+      "left": ["twitter.presenter", "twitter.event"],
+      "center": "Red Hat OpenShift"
+    }
+  },
+  "slides": [
+    {
+      "type": "title",
+      "title": "Containers for JS Devs"
+    },
+    {
+      "type": "split",
+      "left": {
+        "title": "Hi, I'm Joel",
+        "list": [
+          "Dev Advocate @ Red Hat OpenShift",
+          "Based in Ottawa, Canada",
+          "💓  Twitter: @joel__lord"
+        ]
+      },
+      "right": {
+        "text": [
+          "    .-\"\"\"\"\"-.",
+          "    / _____/\\_\\",
+          "   //`__   __ \\\\",
+          "  //  (o) (o)  \\\\",
+          " (_    (___)    _)",
+          "   \\  \\_____/  /",
+          "    `-._   _.-'",
+          "    __.-)_(-,__ ",
+          " ./'/   |_|   \\`\\.",
+          " /   `\"\"\"\"\"\"\"\"\"\"`  \\"
+        ]
+      }
+    },
+    {
+      "type": "list",
+      "title": "Why use containers?",
+      "list": [
+        "Same Environment as Production",
+        "Onboarding",
+        "Open Source Contributions",
+        "Testing"
+      ]
+    },
+    {
+      "type": "simple",
+      "title": "What is a Container?",
+      "text": "A container is a standard unit of software that packages up code and all its dependencies so the application runs quickly and reliably from one computing environment to another."
+    },
+    {
+      "type": "simple",
+      "title": "What is a Container?",
+      "text": "It is a disposable unit. Once it's completed, it destroys itself along with all other dependencies. "
+    },
+    {
+      "type": "list",
+      "title": "Where Does Docker Fit?",
+      "list": [
+        "One of various tools to run containers",
+        "Used as the base for the OCI",
+        "`podman` is an alternative for Linux"
+      ]
+    },
+    {
+      "type": "titleOnly",
+      "title": "Container In Practice"
+    },
+    {
+      "type": "titleOnly",
+      "title": "Should You Use Them?"
+    },
+    {
+      "type": "simple",
+      "title": "Day To Day Development",
+      "text": "Yes!"
+    },
+    {
+      "type": "simple",
+      "title": "Testing",
+      "text": "Yes!"
+    },
+    {
+      "type": "simple",
+      "title": "Open Source Projects",
+      "text": "Yes, Yes and Yes!"
+    },
+    {
+      "type": "simple",
+      "title": "Thank You",
+      "text": "More information available at\n[blue][underscore]http://ezurl.to/containers[reset]\n\nReach out on Twitter at [blue][bright]@joel__lord[reset]"
+    }
+  ]
+}
